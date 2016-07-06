@@ -1,5 +1,5 @@
 /// scr_move_state
-
+//asdfasdf
 len = spd*4; // se mueve 4 veces mas rapido
 
 // Get the hspd and vspd
