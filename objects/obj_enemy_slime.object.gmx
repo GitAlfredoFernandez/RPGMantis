@@ -28,7 +28,7 @@
             <string>/// Initializa the slime
 event_inherited(); // Corre el evento Create del padre en lugar de pisarlo
 image_speed = .1; //Velocidad de la animación del sprite del slime
-spd = .5; //Velocidad a la que se mueve el enemigo
+spd = 1; //Velocidad a la que se mueve el enemigo
 state = scr_enemy_idle_state;
 alarm[0] = room_speed*irandom_range(2,5); // se va a mover random y parar gracias a esta alarma
 sight = 64; // La vista que tiene el enemigo 64 pixeles por ejemplo
