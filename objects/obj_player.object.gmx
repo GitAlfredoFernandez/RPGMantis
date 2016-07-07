@@ -92,8 +92,14 @@ state = scr_move_state;
           <argument>
             <kind>1</kind>
             <string>/// Move the player in the step event
-event_inherited(); // Corre el evento STEP del padre en lugar de pisarlo
+depth = -y;
 script_execute(state);
+
+// Check for death player
+if (obj_player_stats.hp &lt;= 0)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
