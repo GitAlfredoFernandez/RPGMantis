@@ -24,6 +24,9 @@
       <sprite>sprites\spr_boss_down</sprite>
     </sprites>
     <sprite>sprites\spr_expr</sprite>
+    <sprites name="Objetos">
+      <sprite>sprites\spr_door</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -61,9 +64,11 @@
     <object>objects\obj_boss</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_expr</object>
+    <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
+    <room>rooms\rm_two</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Initialize the lifeform
-phy_fixed_rotation = true  // soluciona el problema de las rotaciones cuando colisiona con otros objetos
+            <string>/// Initialize the lifeform -   
+phy_fixed_rotation = true; // soluciona el problema de las rotaciones cuando colisiona con otros objetos
 hp = 3;
 </string>
           </argument>
