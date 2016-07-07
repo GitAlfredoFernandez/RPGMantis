@@ -1,10 +1,12 @@
 /// scr_move_state
 scr_get_input();
 
-if (dash_key)
+if (dash_key && obj_player_stats.stamina >= DASH_COST)
 {
     state = scr_dash_state;
     alarm[0] = room_speed/6; // Activa la alarma de cuenta regresiva en room_speed (que es 30) divido 8 o sea la cantidad de cuadros por segundo divido 8 o algo asi.
+    obj_player_stats.stamina -=DASH_COST;
+    obj_player_stats.alarm[0] = room_speed;
 }
 
 if (attack_key)
