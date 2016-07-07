@@ -48,5 +48,6 @@ if (image_index >= 3 && attacked == false)
     }
     var damage = instance_create(xx,yy,obj_damage);
     damage.creator = id; // Indica quien es el creador
+    damage.damage = obj_player_stats.attack; // saca el attack de la variable del pj y sus stats
     attacked = true;
 }
