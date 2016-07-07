@@ -76,13 +76,20 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Damage all lifeforms
+            <string>/// Damage the player
 if (other.id != creator)
 {
     obj_player_stats.hp -= damage; // daña al otro objeto
     
     //Apply the knockback
-    var dir = point_direction(creator.x,creator.y, other.x,other.y);
+    if (instance_exists(creator)
+    {
+        var dir = point_direction(creator.x,creator.y, other.x,other.y);
+    }
+    else
+    {
+        var dir = point_direction(x,y, other.x,other.y); 
+    }
     var xforce = lengthdir_x(knockback,dir);
     var yforce = lengthdir_y(knockback,dir);
     with (other)  // Esto corre para el otro objeto con el que colisiona
@@ -119,7 +126,14 @@ if (other.id != creator)
     other.hp -= damage; // daña al otro objeto
     
     //Apply the knockback
-    var dir = point_direction(creator.x,creator.y, other.x,other.y);
+    if (instance_exists(creator)
+    {
+        var dir = point_direction(creator.x,creator.y, other.x,other.y);
+    }
+    else
+    {
+        var dir = point_direction(x,y, other.x,other.y); 
+    }
     var xforce = lengthdir_x(knockback,dir);
     var yforce = lengthdir_y(knockback,dir);
     with (other)  // Esto corre para el otro objeto con el que colisiona
