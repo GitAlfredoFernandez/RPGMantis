@@ -1,6 +1,10 @@
 /// scr_move_state
-//asdfasdf
+if (len == 0) 
+{
+    dir = face * 90;
+}
 len = spd*4; // se mueve 4 veces mas rapido
+
 
 // Get the hspd and vspd
 hspd = lengthdir_x(len,dir);

@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-10</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>obj_lifeform_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -92,8 +92,95 @@ state = scr_move_state;
           <argument>
             <kind>1</kind>
             <string>/// Move the player in the step event
-event_inherited(); // Corre el evento STEP del padre en lugar de pisarlo
+depth = -y;
 script_execute(state);
+
+// Check for death player
+if (obj_player_stats.hp &lt;= 0)
+{
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_door">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Go to next room
+if (room_exists(other.new_room))
+{
+    room_goto(other.new_room);
+    x = other.new_x;
+    y = other.new_y;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_expr">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// LEVEL UP CODE + Collect expr
+with (other)
+{
+    instance_destroy();
+}
+
+// level up code:
+// ==============
+with (obj_player_stats)
+{
+    expr += 1;
+    if (expr &gt;= maxexpr)
+    {
+        level += 1;
+        
+        // esto es en caso que la experiencia ganada en ese momento supere la necesaria para subir de nivel
+        // entonces se guarda el valor remanente como proxima experiencia.
+        expr = expr-maxexpr; 
+        
+        maxexpr *= 2; // Exponencialmente aumenta lo necesario para el proximo nivel
+        
+        //Cuando sube de lvl se le suben las stasts generales
+        hp += 2;
+        maxhp += 2;
+        stamina += 2;
+        maxstamina +=2;
+        attack += 1;
+    }
+}
+
 </string>
           </argument>
         </arguments>
@@ -122,6 +209,30 @@ if (state == scr_attack_state)
     state = scr_move_state;
     attacked = false;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Set fix rotation
+phy_fixed_rotation = true;
 </string>
           </argument>
         </arguments>
