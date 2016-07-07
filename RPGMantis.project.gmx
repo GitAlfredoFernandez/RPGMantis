@@ -20,6 +20,9 @@
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_enemy_slime</sprite>
     <sprite>sprites\spr_damage</sprite>
+    <sprites name="Boss">
+      <sprite>sprites\spr_boss_down</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -54,6 +57,7 @@
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_enemy_slime</object>
     <object>objects\obj_damage</object>
+    <object>objects\obj_boss</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>

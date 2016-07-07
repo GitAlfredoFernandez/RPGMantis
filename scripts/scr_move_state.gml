@@ -41,7 +41,7 @@ phy_position_x += hspd;
 phy_position_y += vspd;
 
 // Control the sprite
-image_speed = .2;
+image_speed = .3;
 if (len == 0) image_index = 0;
 
 
