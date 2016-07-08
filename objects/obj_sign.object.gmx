@@ -52,8 +52,8 @@ text[2] = "If you go... tas frito.";
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,10</point>
-    <point>16,10</point>
+    <point>0,6</point>
+    <point>16,6</point>
     <point>16,16</point>
     <point>0,16</point>
   </PhysicsShapePoints>
