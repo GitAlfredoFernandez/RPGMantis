@@ -58,7 +58,15 @@ targety = 0;
           <argument>
             <kind>1</kind>
             <string>/// Create the experience
+
+// Dropea experiencia por cada muerte una vez que es destruido el objeto (muerto)
 instance_create(x, y, obj_expr);
+
+// Drop de HEALTH Random
+if (scr_chance(.5)) // .5 seria segun este gil 50% de chance
+{
+    instance_create(x+random_range(-8,8), y+ random_range(-8,8),obj_health);
+}
 
 </string>
           </argument>

@@ -24,9 +24,12 @@
       <sprite>sprites\spr_boss_down</sprite>
     </sprites>
     <sprite>sprites\spr_expr</sprite>
+    <sprite>sprites\spr_health</sprite>
     <sprites name="Objetos">
       <sprite>sprites\spr_door</sprite>
     </sprites>
+    <sprite>sprites\spr_sign</sprite>
+    <sprite>sprites\spr_dialog_box</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -36,6 +39,7 @@
     <scripts name="Helper Scripts">
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_get_input.gml</script>
+      <script>scripts\scr_chance.gml</script>
     </scripts>
     <scripts name="Player State">
       <script>scripts\scr_dash_state.gml</script>
@@ -52,6 +56,7 @@
       <script>scripts\scr_enemy_wander_state.gml</script>
       <script>scripts\scr_enemy_chase_state.gml</script>
     </scripts>
+    <script>scripts\scr_string_copy_words.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_lifeform_parent</object>
@@ -64,7 +69,11 @@
     <object>objects\obj_boss</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_expr</object>
+    <object>objects\obj_health</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_speaker</object>
+    <object>objects\obj_dialog</object>
+    <object>objects\obj_sign</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
