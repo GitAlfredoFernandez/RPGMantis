@@ -22,6 +22,9 @@
     <sprite>sprites\spr_damage</sprite>
     <sprites name="Boss">
       <sprite>sprites\spr_boss_down</sprite>
+      <sprite>sprites\spr_boss_left</sprite>
+      <sprite>sprites\spr_boss_right</sprite>
+      <sprite>sprites\spr_boss_up</sprite>
     </sprites>
     <sprite>sprites\spr_expr</sprite>
     <sprite>sprites\spr_health</sprite>
@@ -40,6 +43,7 @@
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_get_input.gml</script>
       <script>scripts\scr_chance.gml</script>
+      <script>scripts\scr_string_copy_words.gml</script>
     </scripts>
     <scripts name="Player State">
       <script>scripts\scr_dash_state.gml</script>
@@ -56,7 +60,16 @@
       <script>scripts\scr_enemy_wander_state.gml</script>
       <script>scripts\scr_enemy_chase_state.gml</script>
     </scripts>
-    <script>scripts\scr_string_copy_words.gml</script>
+    <scripts name="Boss States">
+      <scripts name="Boss Helper Scripts">
+        <script>scripts\scr_check_for_player_boss.gml</script>
+        <script>scripts\scr_boss_choose_next_state.gml</script>
+      </scripts>
+      <script>scripts\scr_boss_idle_state.gml</script>
+      <script>scripts\scr_boss_stall_state.gml</script>
+      <script>scripts\scr_boss_wander_state.gml</script>
+      <script>scripts\scr_boss_chase_state.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_lifeform_parent</object>
@@ -65,8 +78,8 @@
     <object>objects\obj_view</object>
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_enemy_slime</object>
-    <object>objects\obj_damage</object>
     <object>objects\obj_boss</object>
+    <object>objects\obj_damage</object>
     <object>objects\obj_player_stats</object>
     <object>objects\obj_expr</object>
     <object>objects\obj_health</object>
